@@ -1,41 +1,43 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import {searchTerm} from '../actions/index';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { searchTerm } from '../actions/index';
+import { bindActionCreators } from 'redux';
 
 class SearchBar extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {term: ''};
+    this.state = { term: '' };
   }
 
   onInputChange(event) {
-    this.setState({term: event.target.value});
+    this.setState({ term: event.target.value });
   }
 
   onInputSubmit(event) {
     event.preventDefault();
     this.props.searchTerm(this.state.term);
-    this.setState({term: ''});
+    this.setState({ term: '' });
   }
 
   render() {
     return (
       <div>
-        <form onSubmit = {this.onInputSubmit.bind(this)}>
-        <input
-          value = {this.state.term}
-          onChange = {this.onInputChange.bind(this)}
-        />
+        <form onSubmit={this.onInputSubmit.bind(this)}>
+          <input
+            value={this.state.term}
+            onChange={this.onInputChange.bind(this)}
+          />
         </form>
       </div>
     );
   }
-
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({searchTerm: searchTerm}, dispatch);
+  return bindActionCreators({ searchTerm: searchTerm }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+export default connect(
+  null,
+  mapDispatchToProps
+)(SearchBar);

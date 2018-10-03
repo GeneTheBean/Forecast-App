@@ -32,7 +32,7 @@ Weather List Item - The objects that represent each forecast event in the state.
 
 I used the create-react-app tool to setup an empty react project. I then set up Redux with react-redux. The first thing I want to set up is the search bar.
 
-Search Bar:
+SEARCH BAR:
 SearchBar needs to be able to modify the state of our application by dispatching actions. It needs to call an action creator.
 "someone just entered a search term, we need to make an API request". It needs to talk to Redux so, therefore it needs to be a container.
 
@@ -42,7 +42,7 @@ After setting up the redux store, I set up the container with a mapDispatchToPro
 
 Setting up the API call:
 
-Firstly, I need to make a developer account for OpenWeatherMap and make use of the account's clientID and secretID keys. API keys should never be pushed to public repositories so I keep them in a separate file that will be listed in .gitignore. 
+Firstly, I need to make a developer account for OpenWeatherMap and make use of the account's clientID and secretID keys. API keys should never be pushed to public repositories so I keep them in a separate file that will be listed in .gitignore. I use the axios client to make the AJAX call. I'll need to make a reducer to handle the data returned by the dispatched action. I use the redux-promise middleware to ensure that the data fetched from the asynchronous request is being passed to my reducer. To test if the data from the AJAX request is being returned correctly I console log it. However, there is the case where the city searched isn't found. For this I return null, I'll have to think about how to handle this later on. For now, everything seems to be in order, so I'm going to make my Weather List container next. 
 
 
 
