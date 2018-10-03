@@ -26,6 +26,7 @@ class SearchBar extends Component {
           <input
             value={this.state.term}
             onChange={this.onInputChange.bind(this)}
+            placeholder='Enter a city name for a forecast'
           />
         </form>
       </div>
@@ -34,7 +35,7 @@ class SearchBar extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ searchTerm: searchTerm }, dispatch);
+  return bindActionCreators({ searchTerm }, dispatch);
 }
 
 export default connect(
