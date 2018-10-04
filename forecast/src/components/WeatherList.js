@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-import weekday from '../util/Day'
-import WeatherListItem from '../components/WeatherListItem'
+import WeatherListItem from '../components/WeatherListItem';
 
 class WeatherList extends Component {
-
-  renderList() {
-    if(this.props.list != null) {
-      return this.props.list.map((forecast) => {
+  renderList(list) {
+    if (list != null) {
+      return list.map(forecast => {
         return (
           <WeatherListItem
-            key={forecast.dt}
-            forecast={forecast}
+            key={forecast.key}
+            temp={forecast.temp}
+            humidity={forecast.humidity}
+            skies={forecast.skies}
+            clouds={forecast.clouds}
+            winds={forecast.winds}
+            date={forecast.date}
+            active={this.props.active}
           />
         );
-      })
+      });
     }
-  }
-
-  getDay(date) {
-    return weekday[new Date(date).getDay()];
   }
 
   render() {
     return (
       <div>
-        <ul>{this.renderList()}</ul>
+        <ul>{this.renderList(this.props.list)}</ul>
       </div>
     );
   }
