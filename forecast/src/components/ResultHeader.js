@@ -1,15 +1,14 @@
 import React from 'react';
 
-const ResultHeader = ({ forecasts }) => {
-  let city;
-  let notFound = 'Could not find that city. Try again!';
-  if (forecasts != null) {
-    if (Object.keys(forecasts).length !== 0) {
-      city = 'Five Day Forecast for ' + forecasts.city.name;
-    }
-  }
-  const text = forecasts !== null ? city : notFound;
-  return <div>{text}</div>;
+const ResultHeader = ({ city }) => {
+  const notFound = 'Could not find that city. Try again!';
+  const header = 'Five Day Forecast for ';
+  const text = city !== null ?  header + city.name : notFound;
+  return (
+    <div>
+      <h1>{text}</h1>
+    </div>
+  );
 };
 
 export default ResultHeader;

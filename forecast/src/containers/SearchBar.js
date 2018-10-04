@@ -26,7 +26,7 @@ class SearchBar extends Component {
           <input
             value={this.state.term}
             onChange={this.onInputChange.bind(this)}
-            placeholder='Enter a city name for a forecast'
+            placeholder="Enter a city name for a forecast"
           />
         </form>
       </div>
