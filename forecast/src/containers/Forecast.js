@@ -31,6 +31,7 @@ class Forecast extends Component {
     let date;
     let listItem;
     let skiesCount;
+    let mainCount;
     let itemCount, totalTemp, totalHumidity, totalCloudiness, totalWinds;
     for (let i = 0; i < list.length; i++) {
       const current = this.getDay(list[i].dt_txt);
@@ -42,6 +43,7 @@ class Forecast extends Component {
           listItem['clouds'] = parseInt(totalCloudiness / itemCount);
           listItem['winds'] = (totalWinds / itemCount).toFixed(2);
           listItem['skies'] = this.getMaxKey(skiesCount);
+          listItem['main'] = this.getMaxKey(mainCount);
           listItem['date'] = date;
           arr.push(listItem);
           key++;
@@ -55,14 +57,17 @@ class Forecast extends Component {
         totalCloudiness = 0;
         totalWinds = 0;
         skiesCount = new Map();
+        mainCount = new Map();
       }
       itemCount++;
       totalTemp += list[i].main.temp;
       totalHumidity += list[i].main.humidity;
       totalCloudiness += list[i].clouds.all;
       totalWinds += list[i].wind.speed;
-      const count = skiesCount.get(list[i].weather[0].description) || 0;
-      skiesCount.set(list[i].weather[0].description, count + 1);
+      const sCount = skiesCount.get(list[i].weather[0].description) || 0;
+      skiesCount.set(list[i].weather[0].description, sCount + 1);
+      const mCount = skiesCount.get(list[i].weather[0].main) || 0;
+      mainCount.set(list[i].weather[0].main, mCount + 1);
     }
     return arr;
   }
@@ -77,6 +82,7 @@ class Forecast extends Component {
       listItem['clouds'] = list[i].clouds.all;
       listItem['winds'] = list[i].wind.speed;
       listItem['skies'] = list[i].weather[0].description;
+      listItem['main'] = list[i].weather[0].main;
       listItem['date'] = list[i].dt_txt;
       arr.push(listItem);
     }
@@ -136,9 +142,7 @@ class Forecast extends Component {
       );
     } else
       return (
-        <div>
-          <h1>Enter a city name to get a forecast</h1>
-        </div>
+        <div></div>
       );
   }
 }

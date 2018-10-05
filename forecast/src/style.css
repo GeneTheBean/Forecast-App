@@ -1,0 +1,49 @@
+.search-bar {
+  margin: 20px;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 75%;
+}
+
+.weather-list {
+  transform: translateX(-1.5%);
+  text-align: center;
+}
+
+.weather-item {
+  width: 15%;
+  text-align: center;
+  margin: auto;
+  border: gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.weather-description {
+  border: solid;
+  padding: 2px;
+  border-width: 1px;
+}
+
+.day {
+}
+.icon {
+  width: 100%;
+}
+
+.thumbnail {
+  width: inherit;
+  padding: 10px;
+}
+
+.center-div {
+  margin: 0 auto;
+  width: 90%;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+}

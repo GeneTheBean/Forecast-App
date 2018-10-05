@@ -9,6 +9,10 @@ class SearchBar extends Component {
     this.state = { term: '' };
   }
 
+  componentDidMount() {
+    this.props.searchTerm('Manhattan');
+  }
+
   onInputChange(event) {
     this.setState({ term: event.target.value });
   }
@@ -21,7 +25,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className='search-bar'>
         <form onSubmit={this.onInputSubmit.bind(this)}>
           <input
             value={this.state.term}

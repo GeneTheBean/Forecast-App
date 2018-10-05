@@ -14,6 +14,7 @@ class WeatherList extends Component {
             clouds={forecast.clouds}
             winds={forecast.winds}
             date={forecast.date}
+            main={forecast.main}
             active={this.props.active}
           />
         );
@@ -23,8 +24,8 @@ class WeatherList extends Component {
 
   render() {
     return (
-      <div>
-        <ul>{this.renderList(this.props.list)}</ul>
+      <div className='center-div'>
+        <ul className='weather-list'>{this.renderList(this.props.list)}</ul>
       </div>
     );
   }
