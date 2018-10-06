@@ -11,18 +11,15 @@
   margin: 2px;
 }
 .weather-list {
-  -webkit-transform: translateX(-1.5%);
-  transform: translateX(-1.5%);
+  transform: translateX(-3vh);
   text-align: center;
 }
 
 .weather-item {
-  width: 15%;
+  width: 30vh;
   text-align: center;
   margin: auto;
   border: gray;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 .weather-description {
@@ -32,6 +29,13 @@
 }
 
 .day {
+  font-weight: 600;
+  font-size: 200%;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.date {
   font-weight: 600;
 }
 
@@ -51,8 +55,7 @@
 .thumbnail-small {
   width: 90%;
   padding: 10px;
-  -webkit-transform: translateX(20%);
-          transform: translateX(20%);
+  transform: translateX(3vh);
 }
 
 .icon-small {

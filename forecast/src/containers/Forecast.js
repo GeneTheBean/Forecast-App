@@ -35,7 +35,7 @@ class Forecast extends Component {
     let itemCount, totalTemp, totalHumidity, totalCloudiness, totalWinds;
     for (let i = 0; i < list.length; i++) {
       const current = this.getDay(list[i].dt_txt);
-      if (day !== current) {
+      if (day !== current || i === list.length - 1) {
         if (day !== undefined) {
           listItem['key'] = key;
           listItem['temp'] = totalTemp / itemCount;

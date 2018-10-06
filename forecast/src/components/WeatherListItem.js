@@ -9,12 +9,13 @@ const WeatherListItem = props => {
   var dateTime = new Date(props.date);
   var dateDay = moment(dateTime)
     .format('dddd')
-    .toUpperCase();
+    .toUpperCase()
+    .substring(0,3);
 
   if (props.active === 'daily') {
-    dateTime = moment(dateTime).format('MMMM Do');
+    dateTime = '';
   } else if (props.active === 'hourly') {
-    dateTime = moment(dateTime).format('MMMM Do hh:mma');
+    dateTime = moment(dateTime).format('hh:mma');
   }
 
   return (
