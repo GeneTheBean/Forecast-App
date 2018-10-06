@@ -64,6 +64,8 @@ Taking this approach I'll make a Forecast container which has a SearchBar and a 
 Styling
 For the list items i use list-inline-item, making the arrangement easier to read. I'm going to add an icon for the forecasts. I'll make a map for each of the skies conditions and give them their respective icons.
 
+
+
 Tradeoffs I made
 
 Anything I implement with more time (features, fixes, technical debt corrections, etc)

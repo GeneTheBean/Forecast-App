@@ -4,9 +4,9 @@ class ConfigButtons extends Component {
   render() {
     if (this.props.displayDaily !== null && this.props.displayHourly !== null) {
       const dailyClassName =
-        this.props.active === 'daily' ? 'btn btn-primary active' : 'btn';
+        this.props.active === 'daily' ? 'config-button btn btn-primary active' : 'config-button btn';
       const hourlyClassName =
-        this.props.active === 'hourly' ? 'btn btn-primary active' : 'btn';
+        this.props.active === 'hourly' ? 'config-button btn btn-primary active' : 'config-button btn';
       return (
         <div align='center'>
           <button

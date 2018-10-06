@@ -7,7 +7,11 @@
   width: 75%;
 }
 
+.config-button {
+  margin: 2px;
+}
 .weather-list {
+  -webkit-transform: translateX(-1.5%);
   transform: translateX(-1.5%);
   text-align: center;
 }
@@ -28,7 +32,9 @@
 }
 
 .day {
+  font-weight: 600;
 }
+
 .icon {
   width: 100%;
 }
@@ -36,6 +42,26 @@
 .thumbnail {
   width: inherit;
   padding: 10px;
+}
+
+.description-block {
+  display: flex;
+}
+
+.thumbnail-small {
+  width: 90%;
+  padding: 10px;
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+.icon-small {
+  width: 40%;
+}
+
+.temperature {
+  padding-top: 8%;
+  font-size: 25px;
 }
 
 .center-div {
