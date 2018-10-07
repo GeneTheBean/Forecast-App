@@ -1,4 +1,4 @@
-# Five Day Weather Forecast
+# Forecast-App
 A five day weather forecast built in React.
 > Demo: [http://five-forecast.herokuapp.com/](http://five-forecast.herokuapp.com/)
 
