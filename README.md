@@ -32,7 +32,7 @@ ConfigButtons - Buttons to switch from an hourly or daily display
 
 WeatherList - Creates an unordered list of weather events to be displayed on the page.
 
-WeatherList Item - The list tags that represent each forecast event in the state.
+WeatherListItem - The list tags that represent each forecast event in the state.
 
 #### Setting up the API call
 I use the axios client to make the AJAX call, and use the redux-promise middleware to ensure that the data fetched from the asynchronous request is being passed to my reducer.

@@ -12,12 +12,12 @@
 }
 
 .weather-list {
-  transform: translateX(-3vh);
+  transform: translateX(-2.8vh);
   text-align: center;
 }
 
 .weather-item {
-  width: 25vh;
+  width: 27vh;
   text-align: center;
   margin: auto;
   border: gray;
@@ -46,25 +46,14 @@
 
 .thumbnail {
   width: inherit;
-  padding: 10px;
+  padding: 1vh;
 }
 
 .description-block {
   display: flex;
 }
 
-.thumbnail-small {
-  width: 90%;
-  padding: 10px;
-  transform: translateX(3vh);
-}
-
-.icon-small {
-  width: 40%;
-}
-
 .temperature {
-  padding-top: 8%;
   font-size: 25px;
 }
 

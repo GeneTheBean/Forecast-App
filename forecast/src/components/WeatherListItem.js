@@ -32,19 +32,10 @@ const WeatherListItem = props => {
           </div>
           <div>
             <div className='date'>{dateTime}</div>
-            <div className='description-block'>
-              <div className='icon-small'>
-                <img
-                  className='thumbnail-small'
-                  src={Icons['Thermometer']}
-                  alt='temperature'
-                />
-              </div>
-              <div className='temperature'>{tempConversion(props.temp)}</div>
-            </div>
+            <div className='temperature'>{tempConversion(props.temp)}</div>
             <div className='info'>
-              <div>Humidity: {props.humidity}%</div>
               <div>{props.skies}</div>
+              <div>Humidity: {props.humidity}%</div>
               <div>Cloudiness: {props.clouds}%</div>
               <div>
                 Winds: {props.winds}
