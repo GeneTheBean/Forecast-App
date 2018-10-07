@@ -1,8 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import Icons from '../img/icons/Icons';
+
 const WeatherListItem = props => {
-  console.log(Icons[props.main]);
   var tempConversion = K => {
     return parseInt((9 / 5) * (K - 273) + 32) + '°F';
   };
@@ -10,7 +10,7 @@ const WeatherListItem = props => {
   var dateDay = moment(dateTime)
     .format('dddd')
     .toUpperCase()
-    .substring(0,3);
+    .substring(0, 3);
 
   if (props.active === 'daily') {
     dateTime = '';
@@ -43,10 +43,13 @@ const WeatherListItem = props => {
               <div className='temperature'>{tempConversion(props.temp)}</div>
             </div>
             <div className='info'>
-            <div>Humidity: {props.humidity}%</div>
-            <div>{props.skies}</div>
-            <div>Cloudiness: {props.clouds}%</div>
-            <div>Winds: {props.winds}mph</div>
+              <div>Humidity: {props.humidity}%</div>
+              <div>{props.skies}</div>
+              <div>Cloudiness: {props.clouds}%</div>
+              <div>
+                Winds: {props.winds}
+                mph
+              </div>
             </div>
           </div>
         </div>

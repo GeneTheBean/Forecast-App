@@ -8,22 +8,25 @@ class Forecast extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: 'daily'
+      active: ''
     };
+  }
+
+  componentDidMount() {
+    this.setState({ active: 'daily' });
   }
 
   isEmpty(object) {
     return Object.keys(object).length === 0;
   }
 
-  displayDaily() {
-    this.setState({ active: 'daily' });
+  toggleDisplay() {
+    const active = this.state.active === 'daily' ? 'hourly' : 'daily';
+    this.setState({ active });
   }
 
-  displayHourly() {
-    this.setState({ active: 'hourly' });
-  }
-
+  //returns a new list of items with averaged values.
+  //in the cases of skies and main, it chooses to use the most frequent entry
   dailyList(list) {
     const arr = [];
     let key = 0;
@@ -69,10 +72,10 @@ class Forecast extends Component {
       const mCount = mainCount.get(list[i].weather[0].main) || 0;
       mainCount.set(list[i].weather[0].main, mCount + 1);
     }
-    console.log(arr);
     return arr;
   }
 
+  //returns a new list of items with exact values
   hourlyList(list) {
     const arr = [];
     for (let i = 0; i < list.length; i++) {
@@ -90,10 +93,11 @@ class Forecast extends Component {
     return arr;
   }
 
-  getMaxKey(map) {
+  //Iterates through an object to return the key of the highest value
+  getMaxKey(obj) {
     let max = 0;
     let maxKey;
-    for (const [key, value] of map) {
+    for (const [key, value] of obj) {
       if (value > max) {
         max = value;
         maxKey = key;
@@ -121,30 +125,29 @@ class Forecast extends Component {
     const forecasts = this.props.forecasts;
     const nullForecast = forecasts === null;
     if (nullForecast || !this.isEmpty(forecasts)) {
+      //Create values to be passed to child components
       const city = nullForecast ? null : forecasts.city;
-      const daily = nullForecast ? null : this.displayDaily.bind(this);
-      const hourly = nullForecast ? null : this.displayHourly.bind(this);
-      let list;
+      const toggleDisplay = nullForecast ? null : this.toggleDisplay.bind(this);
+
+      let list =
+        this.state.active === 'daily'
+          ? this.state.dailyList
+          : this.state.hourlyList;
+
+      //Clear the list in the case of a search error
       if (nullForecast) list = [];
-      else {
-        if (this.state.active === 'daily') list = this.state.dailyList;
-        else if (this.state.active === 'hourly') list = this.state.hourlyList;
-      }
+
       return (
         <div>
           <ResultHeader city={city} />
           <ConfigButtons
-            displayDaily={daily}
-            displayHourly={hourly}
+            toggleDisplay={toggleDisplay}
             active={this.state.active}
           />
           <WeatherList list={list} active={this.state.active} />
         </div>
       );
-    } else
-      return (
-        <div></div>
-      );
+    } else return <div />;
   }
 }
 

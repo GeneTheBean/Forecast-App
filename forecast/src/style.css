@@ -10,6 +10,7 @@
 .config-button {
   margin: 2px;
 }
+
 .weather-list {
   transform: translateX(-3vh);
   text-align: center;

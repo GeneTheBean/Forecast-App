@@ -22,16 +22,23 @@ The second thing I do is make the distinction between the parts of my applicatio
 
 #### Containers
 Forecast - The top-level container. It's responsible for constructing and passing any needed properties to app's components.
+
 SearchBar - A search bar that takes a city name as search id.
 
-#### Component
+#### Components
 ResultHeader - Displays the heading text result of the search
+
 ConfigButtons - Buttons to switch from an hourly or daily display
+
 WeatherList - Creates an unordered list of weather events to be displayed on the page.
+
 WeatherList Item - The list tags that represent each forecast event in the state.
 
 #### Setting up the API call
 I use the axios client to make the AJAX call, and use the redux-promise middleware to ensure that the data fetched from the asynchronous request is being passed to my reducer.
+
+#### Styling
+I bootstrapped my application using the npm bootstrap package.
 
 ## Tradeoffs I made
 
