@@ -66,9 +66,10 @@ class Forecast extends Component {
       totalWinds += list[i].wind.speed;
       const sCount = skiesCount.get(list[i].weather[0].description) || 0;
       skiesCount.set(list[i].weather[0].description, sCount + 1);
-      const mCount = skiesCount.get(list[i].weather[0].main) || 0;
+      const mCount = mainCount.get(list[i].weather[0].main) || 0;
       mainCount.set(list[i].weather[0].main, mCount + 1);
     }
+    console.log(arr);
     return arr;
   }
 

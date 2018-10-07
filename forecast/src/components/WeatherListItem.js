@@ -44,7 +44,7 @@ const WeatherListItem = props => {
             </div>
             <div className='info'>
             <div>Humidity: {props.humidity}%</div>
-            <div>Skies: {props.skies}</div>
+            <div>{props.skies}</div>
             <div>Cloudiness: {props.clouds}%</div>
             <div>Winds: {props.winds}mph</div>
             </div>
