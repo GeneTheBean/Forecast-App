@@ -12,17 +12,17 @@ class ConfigButtons extends Component {
           ? 'config-button btn btn-primary active'
           : 'config-button btn';
       return (
-        <div align='center'>
+        <div align="center">
           <button
             className={dailyClassName}
-            type='button'
+            type="button"
             onClick={() => this.props.toggleDisplay()}
           >
             Daily
           </button>
           <button
             className={hourlyClassName}
-            type='button'
+            type="button"
             onClick={() => this.props.toggleDisplay()}
           >
             Hourly

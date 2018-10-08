@@ -24,8 +24,8 @@ class WeatherList extends Component {
 
   render() {
     return (
-      <div className='center-div'>
-        <ul className='weather-list'>{this.renderList(this.props.list)}</ul>
+      <div className="center-div">
+        <ul className="weather-list">{this.renderList(this.props.list)}</ul>
       </div>
     );
   }

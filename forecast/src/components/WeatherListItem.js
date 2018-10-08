@@ -19,21 +19,21 @@ const WeatherListItem = props => {
   }
 
   return (
-    <li className='weather-item list-inline-item'>
+    <li className="weather-item list-inline-item">
       <div>
-        <div className='day'>{dateDay}</div>
-        <div className='weather-description'>
-          <div className='icon'>
+        <div className="day">{dateDay}</div>
+        <div className="weather-description">
+          <div className="icon">
             <img
-              className='thumbnail'
+              className="thumbnail"
               src={Icons[props.main]}
               alt={props.main}
             />
           </div>
           <div>
-            <div className='date'>{dateTime}</div>
-            <div className='temperature'>{tempConversion(props.temp)}</div>
-            <div className='info'>
+            <div className="date">{dateTime}</div>
+            <div className="temperature">{tempConversion(props.temp)}</div>
+            <div className="info">
               <div>{props.skies}</div>
               <div>Humidity: {props.humidity}%</div>
               <div>Cloudiness: {props.clouds}%</div>

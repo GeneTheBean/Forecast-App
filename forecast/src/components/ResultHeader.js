@@ -5,7 +5,7 @@ const ResultHeader = ({ city }) => {
   const header = 'Five Day Forecast for ';
   const text = city !== null ? header + "'" + city.name + "'" : notFound;
   return (
-    <div align='center'>
+    <div align="center">
       <h1>{text}</h1>
     </div>
   );
