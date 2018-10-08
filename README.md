@@ -5,7 +5,7 @@ A five day weather forecast built in React.
 You can use this page to search for a five day forecast by location. You have the option to see a daily or hourly view of the forecast.
 
 ## How to build and run
-In the cmd, chage the directory to FDFW/forecast and run these commands.
+In the cmd, chage the directory to /forecast and run these commands.
 ```
 > npm install
 > npm start
@@ -13,16 +13,16 @@ In the cmd, chage the directory to FDFW/forecast and run these commands.
 Then go to localhost:3000 in your web browser.
 
 ## My thought process when creating the solution
-I used the create-react-app tool to setup this project.
+I used the create-react-app tool to setup this project for convenience. 
 
 The technologies I used for this application are React.js and Redux.js. I chose to use React because it's simple to use and can create all of the front-end components my application needs. Along with React, I set up my application with Redux, because it cleans up my code by separating application state and rendering.
 
 #### Additional Packages
-axios - I'm going to need to handle an api request to OpenWeatherMap in order to retrieve forecast information. I use axios to simplify the data handling of this request
+axios - I'm going to need to handle an API request to OpenWeatherMap in order to retrieve forecast information. I use axios to simplify the data handling of this request
 
 redux-promise - I use this middleware to pass the data fetched from the asynchronous request to the application state.
 
-moment - I use this to because it simplifies the process of date conversion and formatting.
+moment - I use this package because it simplifies date conversion and formatting.
 
 The first thing I think of before writing up my application is modeling application state. I draw a visual outline of the project and think about what data I need to build my app. In this case, the data I work with is an object containing all of the appropriate forecast information. After taking a look at the OpenWeatherMap docs, I decided to have my application retrieve a five day forecast with both the search options of city name and zipcode, since searching by city can create ambiguity.
 
